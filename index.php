@@ -1,5 +1,29 @@
 <?php
 
+if ($_POST){
+
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'regnskabsapp.herokuapp.com/api/create_transaction_api.php',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => '{
+            "description" : "Swim Pants",
+            "amount" : "90"
+            }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+        ),
+    ));
+
+    curl_exec($curl);
+
+    curl_close($curl);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,3 +70,18 @@
         <div>
     <div>
 <body>
+
+<?php
+
+if($_POST){
+
+    echo "
+    <h3>Thanks for the purchase</h3>
+    <p>The owner just got this purchase automatically bookpet.</p>
+    <p>Should you wish the same feautures for your small business, visit:</p>
+    <br>
+    <a href='regnskabsapp.herokuapp.com'></a>
+    ";
+
+}
+?>
