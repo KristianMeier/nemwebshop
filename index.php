@@ -1,29 +1,4 @@
 <?php
-
-if($_POST){
-
-    $curl = curl_init();
-
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => 'regnskabsapp.herokuapp.com/api/create_transaction_api.php',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{
-    "description" : "Swim",
-    "amount" : "90"
-}',
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json'
-        ),
-    ));
-
-    $response = curl_exec($curl);
-
-    curl_close($curl);
-
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +21,7 @@ if($_POST){
                     <thead>
                         <tr>
                             <th>Description</th>
-                            <th>Kroners</th>
+                            <th>Kroner</th>
                             <th>Picture</th>
                             <th></th>
                         </tr>
@@ -56,7 +31,7 @@ if($_POST){
                         <tr>
                             <td>Swim Pants</td>
                             <td>90</td>
-                            <td><img src="swim_pants.jpg" alt="Svim Pants" width="100" height="100"></td>
+                            <td><img src="swim_pants.jpg" alt="Swim Pants" width="100" height="100"></td>
                             <td>
                                 <form method='post'>
                                     <input type="text" style="visibility: hidden" value="">
@@ -70,20 +45,3 @@ if($_POST){
         <div>
     <div>
 <body>
-
-<?php
-if($_POST){
-    echo "<br>";
-    echo $response;
-}
-
-
-
-
-
-
-
-
-
-
-
