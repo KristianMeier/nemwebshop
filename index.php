@@ -77,10 +77,9 @@ if($_POST){
 
     echo "
     <h3>Thanks for the purchase</h3>
-    <p>The owner just got this purchase automatically bookpet.</p>
+    <p>The owner just got this purchase automatically bookkept.</p>
     <p>Should you wish the same feautures for your small business, visit:</p>
-    <br>
-    <a href='regnskabsapp.herokuapp.com'></a>
+    <a href='https://regnskabsapp.herokuapp.com' class='link-primary'>https://regnskabsapp.herokuapp.com</a>
     ";
 
 }
