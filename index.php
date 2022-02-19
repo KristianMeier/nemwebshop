@@ -1,17 +1,16 @@
 <?php
 
 if ($_POST){
-
-
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'regnskabsapp.herokuapp.com/api/create_transaction_api.php',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{
-            "description" : "Swim Pants",
-            "amount" : "90"
+        CURLOPT_POSTFIELDS =>
+            '{
+                "description" : "Swim Pants",
+                "amount" : "90"
             }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json'
@@ -19,9 +18,7 @@ if ($_POST){
     ));
 
     curl_exec($curl);
-
     curl_close($curl);
-
 }
 
 ?>
